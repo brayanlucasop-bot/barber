@@ -1,0 +1,926 @@
+/* =========================
+   VARIÁVEIS
+========================= */
+:root {
+    /* Cores base */
+    --preto:          #111;
+    --preto-suave:    #1c1c1c;
+    --branco:         #ffffff;
+    --fundo:          #f5f5f5;
+
+    /* Dourado */
+    --dourado:        #c9a45c;
+    --dourado-hover:  #e0bb35;
+
+    /* Textos */
+    --texto:          #171717;
+    --texto-medio:    #555;
+    --texto-claro:    #ddd;
+    --texto-fraco:    #777;
+    --texto-fantasma: #999;
+
+    /* Bordas */
+    --borda:          #ddd;
+    --borda-escura:   #333;
+    --borda-input:    #444;
+
+    /* Feedback */
+    --sucesso:        #4caf50;
+    --perigo:         #b00020;
+    --perigo-hover:   #d0002b;
+    --confirmar:      #2e7d32;
+    --confirmar-hover:#388e3c;
+
+    /* Sombra */
+    --sombra:         0 5px 25px rgba(0, 0, 0, 0.05);
+
+    /* Tipografia dos cards */
+    --fonte-titulo-card:    20px;
+    --fonte-subtitulo-card: 16px;
+
+    /* Formulário */
+    --fonte-label:        14px;
+    --fonte-input:        16px;
+    --altura-input:       48px;
+    --raio-input:         6px;
+    --borda-foco:         var(--dourado);
+    --fundo-input:        var(--branco);
+    --texto-placeholder:  #aaa;
+
+    /* Resumo */
+    --fonte-resumo-label: 13px;
+    --fonte-resumo-valor: 16px;
+    --resumo-raio:         12px;
+    --resumo-largura-botao: 400px;
+
+    /* Título da seção */
+    --fonte-secao-label:  clamp(13px, 1vw, 15px);
+    --fonte-secao-titulo: clamp(32px, 4vw, 48px);
+    --fonte-secao-desc:   clamp(15px, 1.2vw, 18px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    width: 100%;
+    height: 80px;
+    background: var(--preto);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    color: var(--branco);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo strong {
+    border: 2px solid var(--dourado);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dourado);
+    border-radius: 50%;
+}
+
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.header nav a:hover {
+    color: var(--dourado);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.65) 55%,
+            rgba(0, 0, 0, 0.45) 100%
+        ),
+        url('/banner.jpg') center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: var(--branco);
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.subtitulo {
+    color: var(--dourado);
+    font-size: clamp(13px, 1vw, 16px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 4.5vw, 80px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--dourado);
+}
+
+.hero p:not(.subtitulo) {
+    color: var(--texto-claro);
+    font-size: clamp(15px, 1.2vw, 20px);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.botao {
+    display: inline-block;
+    background: var(--dourado);
+    color: var(--preto);
+    border: none;
+    padding: clamp(14px, 1vw, 18px) clamp(22px, 1.8vw, 32px);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: clamp(14px, 0.9vw, 16px);
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+.botao:hover {
+    background: var(--branco);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-secao p {
+    color: var(--dourado);
+    font-weight: 800;
+    font-size: var(--fonte-secao-label);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.titulo-secao h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: var(--fonte-secao-titulo);
+    margin-bottom: 10px;
+}
+
+.titulo-secao span {
+    color: var(--texto-medio);
+    font-size: var(--fonte-secao-desc);
+}
+
+/* =========================
+   PASSOS
+========================= */
+.agendamento-wrapper {
+    position: relative;
+}
+
+.passos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    position: sticky;
+    top: 0;
+    background: var(--fundo);
+    padding: 15px 10px;
+    z-index: 10;
+}
+
+.passo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--texto-medio);
+    min-width: 80px;
+}
+
+.passo span {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.passo p {
+    font-size: 14px;
+}
+
+.passo.ativo {
+    color: var(--preto);
+}
+
+.passo.ativo span {
+    background: var(--preto);
+    color: var(--branco);
+    border-color: var(--preto);
+}
+
+.passo.ativo p {
+    font-weight: 700;
+}
+
+.linha {
+    width: 70px;
+    height: 1px;
+    background: var(--borda);
+}
+
+/* =========================
+   ETAPAS
+========================= */
+.etapa {
+    background: var(--branco);
+    padding: 35px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.etapa h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--preto);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: var(--texto-medio);
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* =========================
+   SERVIÇOS
+========================= */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.servico {
+    border: 1px solid var(--borda);
+    background: var(--branco);
+    padding: 22px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.servico span {
+    font-size: 24px;
+    color: var(--dourado);
+}
+
+.servico strong {
+    font-size: var(--fonte-titulo-card);
+}
+
+.servico small {
+    color: var(--texto-medio);
+    font-size: var(--fonte-subtitulo-card);
+}
+
+.servico:hover {
+    border-color: var(--dourado);
+    transform: translateY(-3px);
+}
+
+.servico.selecionado {
+    background: var(--preto);
+    color: var(--branco);
+    border-color: var(--preto);
+}
+
+.servico.selecionado small {
+    color: #ccc;
+}
+
+/* =========================
+   PROFISSIONAIS
+========================= */
+.profissionais {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.profissional {
+    border: 1px solid var(--borda);
+    background: var(--branco);
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.profissional:hover {
+    border-color: var(--dourado);
+}
+
+.profissional.selecionado {
+    background: var(--preto);
+    color: var(--branco);
+    border-color: var(--preto);
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: var(--dourado);
+    color: var(--preto);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.profissional div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profissional strong {
+    font-size: var(--fonte-titulo-card);
+}
+
+.profissional small {
+    color: var(--texto-medio);
+    font-size: var(--fonte-subtitulo-card);
+}
+
+.profissional.selecionado small {
+    color: #ccc;
+}
+
+/* =========================
+   DATA E HORÁRIO
+========================= */
+.data-horario {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.campo label {
+    font-size: var(--fonte-label);
+    font-weight: 700;
+    color: var(--preto);
+}
+
+.campo input {
+    width: 100%;
+    height: var(--altura-input);
+    padding: 0 14px;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio-input);
+    background: var(--fundo-input);
+    color: var(--texto);
+    font-family: inherit;
+    font-size: var(--fonte-input);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus {
+    border-color: var(--borda-foco);
+    box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.18);
+}
+
+.horarios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.horario {
+    padding: 12px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: var(--fonte-subtitulo-card);
+    font-weight: 600;
+}
+
+.horario:hover {
+    border-color: var(--dourado);
+}
+
+.horario.selecionado {
+    background: var(--preto);
+    color: var(--branco);
+    border-color: var(--preto);
+}
+
+.horario.ocupado {
+    background: #eee;
+    color: var(--texto-fantasma);
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* =========================
+   RESUMO
+========================= */
+.resumo {
+    background: var(--branco);
+    color: var(--texto);
+    border-radius: var(--resumo-raio);
+    border: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.resumo-titulo {
+    background: var(--preto);
+    padding: 30px 35px;
+}
+
+.resumo-titulo p {
+    color: var(--dourado);
+    font-size: var(--fonte-resumo-label);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.resumo-titulo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--branco);
+    margin-top: 5px;
+}
+
+.resumo-conteudo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 30px 35px 0;
+    margin-bottom: 25px;
+}
+
+.resumo-conteudo div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.resumo-conteudo span {
+    color: var(--texto-fraco);
+    font-size: var(--fonte-resumo-label);
+}
+
+.resumo-conteudo strong {
+    font-size: var(--fonte-resumo-valor);
+    font-weight: 700;
+    color: var(--preto);
+}
+
+.botao-confirmar {
+    display: block;
+    width: calc(100% - 70px);
+    max-width: var(--resumo-largura-botao);
+    margin: 0 auto 30px;
+    padding: 17px;
+    background: var(--dourado);
+    color: var(--preto);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.botao-confirmar:hover {
+    background: var(--preto);
+    color: var(--dourado);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MENSAGEM
+========================= */
+.mensagem {
+    display: none;
+    text-align: center;
+    background: var(--branco);
+    padding: 50px 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.mensagem.exibir {
+    display: block;
+}
+
+.check {
+    width: 70px;
+    height: 70px;
+    background: var(--dourado);
+    color: var(--preto);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.mensagem h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.mensagem > p {
+    color: var(--texto-fraco);
+    margin-bottom: 25px;
+}
+
+#dadosConfirmacao {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background: var(--fundo);
+    text-align: left;
+    line-height: 2;
+}
+
+/* =========================
+   MODAL: CONSULTAR AGENDAMENTO
+========================= */
+.modal-consulta {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-consulta.aberto {
+    display: flex;
+}
+
+.modal-consulta-conteudo {
+    background: var(--preto);
+    color: var(--branco);
+    border-radius: var(--resumo-raio);
+    border: 1px solid var(--borda-escura);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--branco);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-fechar:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.modal-titulo p {
+    color: var(--dourado);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.modal-titulo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.modal-descricao {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.modal-consulta .consulta-form label {
+    display: block;
+    color: var(--branco);
+    font-size: var(--fonte-label);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.modal-consulta .consulta-form input {
+    width: 100%;
+    height: var(--altura-input);
+    padding: 0 14px;
+    border-radius: var(--raio-input);
+    border: 1px solid var(--borda-input);
+    background: var(--preto-suave);
+    color: var(--branco);
+    font-family: inherit;
+    font-size: var(--fonte-input);
+    outline: none;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.modal-consulta .consulta-form input:focus {
+    border-color: var(--borda-foco);
+    box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.25);
+}
+
+.modal-consulta .consulta-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: var(--dourado);
+    color: var(--preto);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-consulta .consulta-form button:hover {
+    background: var(--dourado-hover);
+}
+.modal-consulta.com-resultado .consulta-form {
+    display: none;
+}
+
+/* =========================
+   RESULTADO DO ATENDIMENTO
+========================= */
+.resultado-atendimento {
+    margin-top: 25px;
+}
+
+.card-atendimento {
+    background: var(--preto-suave);
+    border: 1px solid var(--borda-escura);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    color: var(--branco);
+}
+
+.card-atendimento h3 {
+    color: var(--dourado);
+    margin-bottom: 20px;
+}
+
+.dado-atendimento {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--borda-escura);
+}
+
+.dado-atendimento:last-child {
+    border-bottom: none;
+}
+
+.dado-atendimento strong {
+    color: #aaa;
+}
+
+.status-agendado {
+    color: var(--sucesso);
+    font-weight: bold;
+}
+
+.botao-remarcar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--dourado);
+    color: var(--preto);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* =========================
+   BOTÃO CANCELAR
+========================= */
+.botao-cancelar {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--perigo);
+    color: var(--branco);
+    font-size: 15px;
+}
+
+
+/* =========================
+   REMARCAÇÃO
+========================= */
+.area-remarcacao {
+    margin-top: 20px;
+    padding: 24px;
+    border-radius: 10px;
+    background: #1a1a1a;
+    border: 1px solid rgba(201, 164, 92, 0.25);
+}
+
+.area-remarcacao h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    color: var(--dourado);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+}
+
+.area-remarcacao label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: var(--texto-claro);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.area-remarcacao input,
+.area-remarcacao select {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border-radius: 6px;
+    border: 1px solid var(--borda-input);
+    background: #2a2a2a;
+    color: var(--branco);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.area-remarcacao input:focus,
+.area-remarcacao select:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.2);
+}
+
+.area-remarcacao input::placeholder {
+    color: #666;
+}
+
+.botao-confirmar-remarcacao {
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: var(--dourado);
+    color: var(--preto);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-confirmar-remarcacao:hover {
+    background: var(--branco);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia | Agendamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <div class="logo">
+            <span>BARBEARIA</span>
+            <strong>LF</strong>
+        </div>
+        <nav>
+            <a href="#agendamento">Agendamento</a>
+            <a href="#servicos">Serviços</a>
+        </nav>
+    </header>
+
+
+    <!-- BANNER -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="subtitulo">ESTILO ♦ QUALIDADE ♦ PROFISSIONALISMO</p>
+            <h1>
+                Seu estilo começa
+                <span>aqui.</span>
+            </h1>
+            <p>
+                Escolha seu serviço, profissional, data e horário
+                e faça seu agendamento de forma rápida.
+            </p>
+            <a href="#agendamento" class="botao">
+                AGENDAR HORÁRIO
+            </a>
+            <a href="#consultar-agendamento" class="botao" data-abrir-modal>
+                CONSULTAR AGENDAMENTO
+            </a>
+        </div>
+    </section>
+
+
+    <!-- AGENDAMENTO -->
+    <main id="agendamento" class="container">
+
+        <div class="titulo-secao">
+            <p>AGENDE SEU HORÁRIO</p>
+            <h2>Faça seu agendamento</h2>
+            <span>Preencha as informações abaixo.</span>
+        </div>
+
+        <div class="agendamento-wrapper">
+
+            <!-- PASSOS -->
+            <div class="passos">
+                <div class="passo ativo">
+                    <span>1</span>
+                    <p>Serviço</p>
+                </div>
+                <div class="linha"></div>
+                <div class="passo">
+                    <span>2</span>
+                    <p>Profissional</p>
+                </div>
+                <div class="linha"></div>
+                <div class="passo">
+                    <span>3</span>
+                    <p>Data</p>
+                </div>
+                <div class="linha"></div>
+                <div class="passo">
+                    <span>4</span>
+                    <p>Dados</p>
+                </div>
+            </div>
+
+
+            <!-- SERVIÇOS -->
+            <section id="servicos" class="etapa">
+                <h3>01. Escolha o serviço</h3>
+                <p class="descricao">Selecione o serviço que deseja realizar.</p>
+
+                <div class="servicos-grid">
+                    <button class="servico" data-servico="Corte degradê">
+                        <span>✂</span>
+                        <strong>Corte degradê</strong>
+                        <small>R$ 35,00</small>
+                    </button>
+                    <button class="servico" data-servico="Corte social">
+                        <span>✂</span>
+                        <strong>Corte social</strong>
+                        <small>R$ 30,00</small>
+                    </button>
+                    <button class="servico" data-servico="Barba">
+                        <span>🪒</span>
+                        <strong>Barba</strong>
+                        <small>R$ 25,00</small>
+                    </button>
+                    <button class="servico" data-servico="Corte + barba">
+                        <span>✂</span>
+                        <strong>Corte + barba</strong>
+                        <small>R$ 55,00</small>
+                    </button>
+                    <button class="servico" data-servico="Sobrancelha">
+                        <span>✦</span>
+                        <strong>Sobrancelha</strong>
+                        <small>R$ 15,00</small>
+                    </button>
+                    <button class="servico" data-servico="Corte e penteado">
+                        <span>✂</span>
+                        <strong>Corte e penteado</strong>
+                        <small>R$ 45,00</small>
+                    </button>
+                    <button class="servico" data-servico="Limpeza de pele">
+                        <span>●</span>
+                        <strong>Limpeza de pele</strong>
+                        <small>R$ 40,00</small>
+                    </button>
+                    <button class="servico" data-servico="Corte + progressiva">
+                        <span>✂</span>
+                        <strong>Corte + progressiva</strong>
+                        <small>R$ 100,00</small>
+                    </button>
+                    <button class="servico" data-servico="Corte + alisamento">
+                        <span>✂</span>
+                        <strong>Corte + alisamento</strong>
+                        <small>R$ 90,00</small>
+                    </button>
+                    <button class="servico" data-servico="Corte + botox">
+                        <span>✂</span>
+                        <strong>Corte + botox</strong>
+                        <small>R$ 100,00</small>
+                    </button>
+                    <button class="servico" data-servico="Corte + hidratação">
+                        <span>✂</span>
+                        <strong>Corte + hidratação</strong>
+                        <small>R$ 80,00</small>
+                    </button>
+                    <button class="servico" data-servico="Acabamento">
+                        <span>✂</span>
+                        <strong>Acabamento</strong>
+                        <small>R$ 20,00</small>
+                    </button>
+                    <button class="servico" data-servico="Corte + luzes">
+                        <span>✂</span>
+                        <strong>Corte + luzes</strong>
+                        <small>R$ 150,00</small>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- PROFISSIONAIS -->
+            <section id="etapa-profissional" class="etapa">
+                <h3>02. Escolha o profissional</h3>
+                <p class="descricao">Selecione o profissional que realizará seu atendimento.</p>
+
+                <div class="profissionais">
+                    <button class="profissional" data-profissional="João">
+                        <div class="avatar">J</div>
+                        <div>
+                            <strong>João</strong>
+                            <small>Barbeiro</small>
+                        </div>
+                    </button>
+                    <button class="profissional" data-profissional="Carlos">
+                        <div class="avatar">C</div>
+                        <div>
+                            <strong>Carlos</strong>
+                            <small>Barbeiro</small>
+                        </div>
+                    </button>
+                    <button class="profissional" data-profissional="Lucas">
+                        <div class="avatar">L</div>
+                        <div>
+                            <strong>Lucas</strong>
+                            <small>Barbeiro</small>
+                        </div>
+                    </button>
+                    <button class="profissional" data-profissional="Rafael">
+                        <div class="avatar">R</div>
+                        <div>
+                            <strong>Rafael</strong>
+                            <small>Barbeiro</small>
+                        </div>
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- DATA E HORÁRIO -->
+            <section id="etapa-data" class="etapa">
+                <h3>03. Escolha a data e horário</h3>
+                <p class="descricao">Escolha quando deseja realizar seu atendimento.</p>
+
+                <div class="data-horario">
+                    <div class="campo">
+                        <label for="data">Data</label>
+                        <input type="date" id="data">
+                    </div>
+
+                    <div class="campo">
+                        <label>Horário</label>
+                        <div class="horarios">
+                            <button class="horario" data-horario="08:00">08:00</button>
+                            <button class="horario" data-horario="09:00">09:00</button>
+                            <button class="horario" data-horario="10:00">10:00</button>
+                            <button class="horario" data-horario="11:00">11:00</button>
+                            <button class="horario" data-horario="13:00">13:00</button>
+                            <button class="horario" data-horario="14:00">14:00</button>
+                            <button class="horario" data-horario="15:00">15:00</button>
+                            <button class="horario" data-horario="16:00">16:00</button>
+                            <button class="horario" data-horario="17:00">17:00</button>
+                            <button class="horario" data-horario="18:00">18:00</button>
+                            <button class="horario" data-horario="19:00">19:00</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- DADOS DO CLIENTE -->
+            <section id="etapa-dados" class="etapa">
+                <h3>04. Seus dados</h3>
+                <p class="descricao">Precisamos dessas informações para identificar seu atendimento.</p>
+
+                <div class="formulario">
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            minlength="3"
+                            maxlength="100"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input
+                            type="tel"
+                            id="whatsapp"
+                            name="whatsapp"
+                            placeholder="(11) 99999-9999"
+                            inputmode="numeric"
+                            minlength="10"
+                            maxlength="16"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="seuemail@email.com"
+                            maxlength="254"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /.agendamento-wrapper -->
+
+
+        <!-- RESUMO -->
+        <section class="resumo">
+            <div class="resumo-titulo">
+                <p>RESUMO</p>
+                <h3>Seu agendamento</h3>
+            </div>
+
+            <div class="resumo-conteudo">
+                <div>
+                    <span>Serviço</span>
+                    <strong id="resumoServico">Não selecionado</strong>
+                </div>
+                <div>
+                    <span>Profissional</span>
+                    <strong id="resumoProfissional">Não selecionado</strong>
+                </div>
+                <div>
+                    <span>Data</span>
+                    <strong id="resumoData">Não selecionada</strong>
+                </div>
+                <div>
+                    <span>Horário</span>
+                    <strong id="resumoHorario">Não selecionado</strong>
+                </div>
+                <div>
+                    <span>Cliente</span>
+                    <strong id="resumoCliente">Não informado</strong>
+                </div>
+            </div>
+
+            <button id="confirmar" class="botao-confirmar">
+                CONFIRMAR AGENDAMENTO
+            </button>
+        </section>
+
+
+        <!-- MENSAGEM -->
+        <div id="mensagem" class="mensagem">
+            <div class="check">✓</div>
+            <h2>Agendamento confirmado!</h2>
+            <p>Seu horário foi reservado com sucesso.</p>
+            <div id="dadosConfirmacao"></div>
+            <button id="novoAgendamento" class="botao">NOVO AGENDAMENTO</button>
+        </div>
+
+    </main>
+
+
+    <!-- MODAL: CONSULTAR AGENDAMENTO -->
+    <div class="modal-consulta" id="consultar-agendamento">
+        <div class="modal-consulta-conteudo">
+
+            <button class="modal-fechar" type="button" aria-label="Fechar">×</button>
+
+            <div class="modal-titulo">
+                <p>CONSULTAR</p>
+                <h2>Meu Atendimento</h2>
+            </div>
+
+            <p class="modal-descricao">
+                Consulte os detalhes do seu agendamento usando o número do atendimento.
+            </p>
+
+            <div class="consulta-form">
+                <label for="numeroAtendimento">Número do atendimento</label>
+                <input
+                    type="number"
+                    id="numeroAtendimento"
+                    placeholder="Ex: 1"
+                    min="1"
+                >
+                <button id="consultarAtendimento" type="button">
+                    CONSULTAR AGENDAMENTO
+                </button>
+            </div>
+
+            <div id="resultadoAtendimento" class="resultado-atendimento"></div>
+
+        </div>
+    </div>
+
+
+    <footer>
+        <p>© 2026 Barbearia LF — Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

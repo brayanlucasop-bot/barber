@@ -11,7 +11,7 @@ const PORTA = process.env.PORT || 3002;
 const nodemailer = require("nodemailer")
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOSTER,
-  port: 587,
+  port:  process.env.PORT_EMAIL ,
   secure: false, // true para porta 465
   auth: {
     user: process.env.EMAIL_USER, // Puxa do .env

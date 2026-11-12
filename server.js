@@ -8,16 +8,25 @@ const app = express();
 const PORTA = process.env.PORT || 3002;
 
 //Configurando os emails
-const nodemailer = require("nodemailer")
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOSTER,
-  port:  process.env.PORT_EMAIL ,
-  secure: false, // true para porta 465
-  auth: {
-    user: process.env.EMAIL_USER, // Puxa do .env
-    pass: process.env.EMAIL_PASS  // Puxa do .env
-  }
-});
+ const nodemailer = require("nodemailer")
+// const transporter = nodemailer.createTransport({
+//   host: process.env.EMAIL_HOSTER,
+//   port:  process.env.PORT_EMAIL ,
+//   secure: false, // true para porta 465
+//   auth: {
+//     user: process.env.EMAIL_USER, // Puxa do .env
+//     pass: process.env.EMAIL_PASS  // Puxa do .env
+//   }
+// }); const nodemailer = require('nodemailer');
+
+const Transport = require('nodemailer-brevo-transport');
+
+const transporter = nodemailer.createTransport(
+  new Transport({
+    apiKey: process.env.BREVO_API_KEY // Puxa a chave API v3 do .env / Railway
+  })
+);
+
 
 console.log(process.env.EMAIL_USER)
 console.log(process.env.EMAIL_PASS)
@@ -148,7 +157,7 @@ function mandarEmail(destinatario, assunto, email) {
       from: "barbearia uni9<brayanlucasop@uni9.edu.br>",
       to: destinatario,
       subject: assunto,
-      text: "",
+      text: "oi",
       html: email,
     }, (error, info) => {
       if (error) {
